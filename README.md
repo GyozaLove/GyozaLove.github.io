@@ -1,2 +1,2 @@
 # GyozaLove.github.io
-this is readme
+https://gyozalove.github.io/
