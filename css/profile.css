@@ -1,0 +1,143 @@
+@charset "UTF-8";
+/*全体設定*/
+*{
+margin:0px;
+padding:0px;
+}
+
+body{
+    background-color:#008080;
+    background-image: url(../image/fuka.jpg);
+    background-repeat: no-repeat;
+    background-position: left;
+}
+
+/*レイアウトの設定*/
+#container {
+  width:100%;
+  min-height:100vh;
+  margin:0 auto;
+  padding:4px 40px 0;
+}
+
+#header{
+  height:240px;
+  margin-bottom: 40px;
+}
+
+#main{
+  margin-bottom: 80px;
+}
+
+
+#footer{
+  position: absolute;
+  bottom: 0;
+  right:10px;
+}
+
+#footer address{
+  color:#FFFFFF;
+}
+/*ヘッダーの設定*/
+#header h1{
+
+    overflow: hidden;
+    text-indent: 100%;
+    white-space: nowrap;
+}
+
+nav ul{
+  display:flex;
+  flex-flow: nowrap;
+  justify-content: right;
+  list-style: none;
+}
+
+nav li{
+  width:180px;
+  margin-top: 2px;
+  margin-left: 2px;
+  margin-right: 0px;
+  position:right
+  background-color:#FFFFFF;
+}
+
+nav li a{
+  display:flex;
+  margin:5px 10px;
+  padding: 3px 10px;
+  border-radius: 100px;
+  color: #FFFFFF;
+  font-size: 20px;
+  font-family: serif;
+  text-decoration:none;
+  letter-spacing: 0.125em
+  text-align: center;
+}
+
+/*==================================================
+　5-3-3 左から右に線が伸びる（下部）
+===================================*/
+.gnavi li a{
+    /*線の基点とするためrelativeを指定*/
+	position: relative;
+}
+
+.gnavi li.current a,
+.gnavi li a:hover{
+	color:#FFFFFF;
+}
+
+.gnavi li a::after {
+    content: '';
+    /*絶対配置で線の位置を決める*/
+    position: absolute;
+    bottom: 0;
+    left: 10%;
+    /*線の形状*/
+    width: 80%;
+    height: 2px;
+    background:#FFFFFF;
+    /*アニメーションの指定*/
+    transition: all .3s;
+    transform: scale(0, 1);/*X方向0、Y方向1*/
+    transform-origin: left top;/*左上基点*/
+}
+
+/*現在地とhoverの設定*/
+.gnavi li.current a::after,
+.gnavi li a:hover::after {
+    transform: scale(1, 1);/*X方向にスケール拡大*/
+}
+
+
+/*メインの設定*/
+#main h2{
+  color: #FFFFFF;
+  font-size: 30px;
+  font-family: serif;
+}
+
+#main h3{
+  margin-top: 100px;
+  margin-left: 400px;
+  color: #FFFFFF;
+  font-size: 20px;
+  font-family: sans-serif;
+}
+#main p{
+  margin-top: 30px;
+  margin-left: 450px;
+  color: #FFFFFF;
+  font-size: 15px;
+  font-family: sans-serif;
+}
+
+#main h4{
+  margin-top: 40px;
+  margin-left: 400px;
+  color: #FFFFFF;
+  font-size: 20px;
+  font-family: sans-serif;
+}
